@@ -56,6 +56,14 @@ More examples on the wiki: http://wiki.github.com/javan/whenever/instructions-an
 
 And you'll see your schedule.rb converted to cron sytax. Note: running `whenever' with no options does not display your current crontab file, it simply shows you the output of converting your schedule.rb file.
 
+== Inploy integration
+
+Inploy is integrated with Whenever out of the box. The following will be executed every time the code is updated:
+
+  $ whenever --update-crontab {application} --set 'environment={environment}'
+
+where application and environment are the values configured in the config/deploy.rb file.
+
 == Capistrano integration
 
 In your "config/deploy.rb" file do something like:
